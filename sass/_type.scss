@@ -1,0 +1,86 @@
+// Typography
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+// Icon fonts
+@font-face {
+	font-family: 'whhglyphs';
+	src:url('../fonts/whhglyphs.eot');
+	src:url('../fonts/whhglyphs.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/whhglyphs.woff') format('woff'),
+		url('../fonts/whhglyphs.ttf') format('truetype'),
+		url('../fonts/whhglyphs.svg#whhglyphs') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+[data-icon]:before {
+	font-family: 'whhglyphs';
+	content: attr(data-icon);
+	speak: none;
+	color: $white;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	font-size: 110%;
+	margin-right: $pad/5;
+	display: inline-block;
+}
+.tel [data-icon]:before {
+	font-size: 150%;
+}
+.email [data-icon]:before {
+	margin-right: $pad/2.5;
+	vertical-align: text-top;
+	padding-top: $pad/10;
+}
+footer [data-icon]:before {
+	margin-right: $pad/2.5;
+	vertical-align: text-top;
+}
+
+// FFF Tusj
+// @font-face {
+//   font-family: 'FFFTusjBold';
+//   src: url('../fonts/FFF_Tusj-webfont.eot');
+//   src: url('../fonts/FFF_Tusj-webfont.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/FFF_Tusj-webfont.woff') format('woff'),
+//        url('../fonts/FFF_Tusj-webfont.ttf') format('truetype'),
+//        url('../fonts/FFF_Tusj-webfont.svg#FFFTusjBold') format('svg');
+// 	font-weight: normal;
+// 	font-style: normal;
+// 	-webkit-font-smoothing: antialiased;
+// }
+
+// Global type styles
+body {
+	font-family: $baseFontFamily;
+	font-size: $baseFontSize;
+	line-height: $baseLineHeight;
+	text-align: center;
+	font-weight: 400;
+	color: $base;
+}
+h1, h2 {
+	// font-family: 'Cabin Sketch', cursive;
+  // font-family: 'FFFTusjBold', Georgia, Times, "Times New Roman", serif;
+  font-family: Georgia, Times, "Times New Roman", serif;
+	font-weight: 800;
+	font-size: 160%;
+	@include text-shadow(0px 2px 3px $white);
+}
+a {
+	text-decoration: none;
+	color: $pink;
+	@include single-transition(all, .5s, ease);
+	&:hover, &:focus {
+		// text-decoration: underline;
+		border-bottom: 1px solid $white;
+		color: $white;
+	}
+}
+li {
+	font-family: $baseFontFamily;
+	padding-bottom: $pad/2;
+}

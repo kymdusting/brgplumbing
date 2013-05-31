@@ -1,0 +1,18 @@
+// Site scaffolding
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+	background: $base url(../images/bg-shine.png) no-repeat 50% 0;
+}
+.container {
+	// *(* Switch max-width and width before go live
+	// max-width: $globalWidth;
+	width: $globalWidth;
+	margin: 0 auto;
+	padding: $pad;
+	position: relative;
+}

@@ -1,0 +1,128 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "variables";
+
+// Compass goodness
+@import "compass/reset";
+@import "compass/css3";
+
+@import "type";
+@import "scaffolding";
+
+header {
+	padding-top: $pad*1.5;
+	h1 {
+		max-width: 481px;
+	}
+	img {
+		width: 100%;
+	}
+}
+.contact {
+	position: absolute;
+	top: $pad/4;
+	right: $pad;
+	text-align: right;
+	padding: $pad 0 0;
+	dd {
+		display: inline-block;
+		width: auto;
+		a {
+			font-size: 110%;
+			font-weight: 700;
+		}
+	}
+}
+.hero {
+	h2 {
+		font-size: 110%;
+		background: darken($white, 6%);
+		// @include border-radius($pad/2);
+		padding: $pad/4;
+		margin-top: $pad*2;
+		line-height: $pad;
+	}
+	.container {
+		padding-top: 0;
+	}
+}
+.slide-wrap {
+	// *(* Need to replace this with lazing loading of slider content
+	// display: none;
+	border: $pad $white solid;
+	background: $white;
+	margin: $pad auto $pad*2;
+	@include box-shadow(0 0 32px 6px rgba(0,0,0,.4));
+	li {
+		padding: 0;
+	}
+	.bx-wrapper {
+		margin-bottom: $pad;
+		.bx-viewport {
+			border: 0;
+			margin-left: 5px;
+		}
+		.bx-pager, .bx-controls-auto {
+			bottom: -40px;
+		}
+		.bx-controls-direction a {
+			@include single-transition(none);
+			&:hover, &:focus {
+				border-bottom: none;
+			}
+		}
+	}
+}
+.content {
+	background: $white url(../images/bg-grid.png) repeat;
+	@include box-shadow(inset 0 5px 5px rgba(0,0,0,.29)); // inner shadow
+	padding: $pad 0 $pad*3;
+	h1 {
+		padding: $pad/2 0 $pad;
+		text-transform: uppercase;
+	}
+	section {
+		display: inline-block;
+		width: 50%;
+		padding: 0 $pad*3;
+		vertical-align: top;
+	}
+	li {
+		background: transparent url(../images/bg-list.png) no-repeat 0 7px;
+		text-align: left;
+		padding-left: 20px;
+	}
+}
+footer {
+	color: $pink;
+	min-height: 300px;
+}
+.copy {
+	float: left;
+	margin-left: $pad*2;
+}
+.author {
+	float: right;
+	margin-right: $pad*2;
+	&:before {
+		content: " ";
+		width: $pad;
+		height: $pad;
+		display: inline-block;
+		@include border-radius($pad/2);
+		background: $light;
+		margin-right: $pad/2;
+		vertical-align: text-top;
+	}
+	a {
+		color: $white;
+		&:hover, &:focus {
+			color: $pink;
+		}
+	}
+}
+
+@import "utilities";
