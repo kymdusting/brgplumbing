@@ -1,0 +1,70 @@
+// Browser teaks, mostly < IE9 responsive styles
+
+.lt-ie9 {
+	.container {
+		width: $globalWidth;
+	}
+	header {
+		padding-top: $pad*1.5;
+		h1 {
+				margin-left: 0;
+		}
+	}
+	.contact {
+		margin-left: 0;
+		position: absolute;
+		top: $pad/4;
+		right: $pad;
+		text-align: right;
+		dd {
+			display: inline-block;
+			float: none;
+			margin-right: 0;
+		}
+		dt {
+			display: block;
+			float: none;
+		}
+	}
+	.hero {
+		display: block;
+		h2 {
+			background: darken($white, 6%);
+			padding: $pad/4;
+			margin-top: $pad*2;
+			@include text-shadow(0px 2px 3px $white);
+			color: $base;
+		}
+	}
+	.slide-wrap {
+		border: $pad $white solid;
+		background: $white;
+		margin: $pad auto $pad*2;
+		@include box-shadow(0 0 32px 6px rgba(0,0,0,.4));
+	}
+	.content {
+		section {
+			display: inline-block;
+			width: 50%;
+			padding: 0 $pad*3;
+			&.service {
+				margin-top: 0;
+			}
+	  }
+		li {
+			margin-left: 0;
+		}
+	}
+	footer {
+		li {
+			width: 50%;
+			float: left;
+			display: inline;
+			text-align: left;
+			padding: 0 $pad*3;
+		}
+	}
+	.copy {
+		float: left;
+	}
+}

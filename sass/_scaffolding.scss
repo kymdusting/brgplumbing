@@ -8,10 +8,21 @@
 body {
 	background: $base url(../images/bg-shine.png) no-repeat 50% 0;
 }
+// Trigger media queries in JS for conditional content loading
+body:after {
+	display: none;
+	content: "low-tide";
+	@include breakpoint($mid-tide) {
+		content: "mid-tide";
+  }
+	@include breakpoint($high-tide) {
+		content: "high-tide";
+  }
+}
 .container {
 	// *(* Switch max-width and width before go live
-	// max-width: $globalWidth;
-	width: $globalWidth;
+	max-width: $globalWidth;
+	// width: $globalWidth;
 	margin: 0 auto;
 	padding: $pad;
 	position: relative;

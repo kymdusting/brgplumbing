@@ -3,6 +3,7 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
+@import "breakpoint";
 @import "variables";
 
 // Compass goodness
@@ -13,19 +14,25 @@
 @import "scaffolding";
 
 header {
-	padding-top: $pad*1.5;
+	padding-top: $pad*.6;
+	@include breakpoint($high-tide) {
+		padding-top: $pad*1.5;
+	}
 	h1 {
 		max-width: 481px;
+		margin: 0 auto;
+		@include breakpoint($mid-tide) {
+			margin-left: $pad;
+	  }
+		@include breakpoint($high-tide) {
+			margin-left: 0;
+	  }
 	}
 	img {
 		width: 100%;
 	}
 }
 .contact {
-	position: absolute;
-	top: $pad/4;
-	right: $pad;
-	text-align: right;
 	padding: $pad 0 0;
 	dd {
 		display: inline-block;
@@ -35,27 +42,62 @@ header {
 			font-weight: 700;
 		}
 	}
+	@include breakpoint($mid-tide) {
+		margin: 0 0 $pad $pad;
+		dt {
+			float: left;
+		}
+		dd {
+			margin-right: $pad*2;
+			float: left;
+		}
+  }
+	@include breakpoint($high-tide) {
+		margin-left: 0;
+		position: absolute;
+		top: $pad/4;
+		right: $pad;
+		text-align: right;
+		dd {
+			display: inline-block;
+			float: none;
+			margin-right: 0;
+		}
+		dt {
+			display: block;
+			float: none;
+		}
+  }
 }
 .hero {
+	@include breakpoint($mid-tide) {
+		display: block;
+  }
 	h2 {
 		font-size: 110%;
-		background: darken($white, 6%);
-		// @include border-radius($pad/2);
-		padding: $pad/4;
-		margin-top: $pad*2;
 		line-height: $pad;
+		padding: 0 $pad/2;
+		color: $white;
+		@include text-shadow(none);
+		@include breakpoint($mid-tide) {
+			background: darken($white, 6%);
+			padding: $pad/4;
+			margin-top: $pad*2;
+			@include text-shadow(0px 2px 3px $white);
+			color: $base;
+	  }
 	}
 	.container {
 		padding-top: 0;
 	}
 }
 .slide-wrap {
-	// *(* Need to replace this with lazing loading of slider content
-	// display: none;
-	border: $pad $white solid;
-	background: $white;
-	margin: $pad auto $pad*2;
-	@include box-shadow(0 0 32px 6px rgba(0,0,0,.4));
+	@include breakpoint($mid-tide) {
+		border: $pad $white solid;
+		background: $white;
+		margin: $pad auto $pad*2;
+		@include box-shadow(0 0 32px 6px rgba(0,0,0,.4));
+  }
 	li {
 		padding: 0;
 	}
@@ -68,7 +110,7 @@ header {
 		.bx-pager, .bx-controls-auto {
 			bottom: -40px;
 		}
-		.bx-controls-direction a {
+		.bx-controls-direction a, .bx-controls-auto a{
 			@include single-transition(none);
 			&:hover, &:focus {
 				border-bottom: none;
@@ -84,38 +126,65 @@ header {
 		padding: $pad/2 0 $pad;
 		text-transform: uppercase;
 	}
+	.service {
+		margin-top: $pad*2;
+	}
 	section {
-		display: inline-block;
-		width: 50%;
-		padding: 0 $pad*3;
+		@include breakpoint($mid-tide) {
+			display: inline-block;
+			width: 50%;
+			padding: 0 $pad*3;
+			&.service {
+				margin-top: 0;
+			}
+	  }
+		padding: 0;
 		vertical-align: top;
 	}
 	li {
 		background: transparent url(../images/bg-list.png) no-repeat 0 7px;
 		text-align: left;
-		padding-left: 20px;
+		padding-left: $pad;
+		margin-left: $pad/3;
+		@include breakpoint($mid-tide) {
+			margin-left: 0;
+	  }
 	}
 }
 footer {
 	color: $pink;
 	min-height: 300px;
+	li {
+		display: block;
+		width: 100%;
+		@include breakpoint($high-tide) {
+			width: 50%;
+			float: left;
+			display: inline;
+			text-align: left;
+			padding: 0 $pad*3;
+	  }
+	}
 }
 .copy {
-	float: left;
-	margin-left: $pad*2;
+	@include breakpoint($mid-tide) {
+		float: left;
+  }
 }
 .author {
-	float: right;
-	margin-right: $pad*2;
 	&:before {
+		@include breakpoint($low-tide) {
+			width: $pad/1.4;
+			height: $pad/1.4;
+	  }
 		content: " ";
 		width: $pad;
 		height: $pad;
 		display: inline-block;
 		@include border-radius($pad/2);
 		background: $light;
-		margin-right: $pad/2;
 		vertical-align: text-top;
+		margin-right: $pad/2.5;
 	}
 	a {
 		color: $white;
@@ -126,3 +195,4 @@ footer {
 }
 
 @import "utilities";
+@import "browsers";

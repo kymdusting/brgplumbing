@@ -57,6 +57,9 @@ footer [data-icon]:before {
 body {
 	font-family: $baseFontFamily;
 	font-size: $baseFontSize;
+	@include breakpoint($low-tide) {
+		font-size: $baseFontSize/1.2;
+  }
 	line-height: $baseLineHeight;
 	text-align: center;
 	font-weight: 400;
