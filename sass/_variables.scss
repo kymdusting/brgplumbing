@@ -14,3 +14,8 @@ $baseLineHeight:		1.6em !default;
 // Layout
 $globalWidth:  			960px !default;
 $pad:  							20px !default;
+
+// Breakpoints
+$high-tide: 				52.750em !default;
+$mid-tide: 				40.938em !default;
+$low-tide: 				max-width 31.250em !default;
