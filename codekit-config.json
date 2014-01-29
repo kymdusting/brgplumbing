@@ -33,6 +33,15 @@
       "initialSize" : 30337,
       "fileType" : 4096
     },
+    "\/styles\/screen.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/styles\/screen.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
     "\/sass\/ie.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -44,15 +53,6 @@
       "outputAbbreviatedPath" : "\/styles\/ie.css",
       "fileType" : 4,
       "debugStyle" : 0
-    },
-    "\/styles\/screen.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/styles\/screen.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
     },
     "\/sass\/screen.scss" : {
       "ignoreWasSetByUser" : 0,
