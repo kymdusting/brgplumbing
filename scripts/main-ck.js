@@ -23,7 +23,7 @@
           e = "high-tide";
         }
         if (t == "mid-tide") {
-          $(".slide-wrap").load("slider.html", function() {
+          $(".bxslider").length > 0 ? $(".bxslider, .bx-controls").css("display", "block") : $(".slide-wrap").load("slider.html", function() {
             $(".bxslider").bxSlider({
               auto: !0,
               autoControls: !0

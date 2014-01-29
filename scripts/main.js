@@ -39,12 +39,16 @@
 					currentSize = 'high-tide';
 				}
 				if (size == 'mid-tide') {
-					$('.slide-wrap').load('slider.html', function() {
-						$('.bxslider').bxSlider({
-							auto: true,
-							autoControls: true
+					if ($('.bxslider').length > 0) {
+						$('.bxslider, .bx-controls').css('display', 'block');
+					} else {
+						$('.slide-wrap').load('slider.html', function() {
+							$('.bxslider').bxSlider({
+								auto: true,
+								autoControls: true
+							});
 						});
-					});
+					}
 					currentSize = 'mid-tide';
 				}
 				if (size == 'low-tide') {
